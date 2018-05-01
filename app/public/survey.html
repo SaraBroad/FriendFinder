@@ -65,7 +65,7 @@
 
             <div>
                 <h3 class="question">Question 2</h3>
-                <h4>State governments should provide greater funding to struggling school districts. </h4>
+                <h4>Phish is the greatest band.</h4>
                 <select>
                         <option value=""></option>
                         <option value="1">1 (Strongly Disagree)</option>
@@ -78,7 +78,7 @@
 
             <div>
                 <h3 class="question">Question 3</h3>
-                <h4>More money should be spent on education than on funding our prisons.</h4>
+                <h4>All people are entitled to equal health care.</h4>
                 <select>
                         <option value=""></option>
                         <option value="1">1 (Strongly Disagree)</option>
@@ -91,7 +91,7 @@
 
             <div>
                 <h3 class="question">Question 4</h3>
-                <h4>We should end cash bail now.</h4>
+                <h4>Traveling is awesome.</h4>
                 <select>
                         <option value=""></option>
                         <option value="1">1 (Strongly Disagree)</option>
@@ -104,7 +104,7 @@
 
             <div>
                 <h3 class="question">Question 5</h3>
-                <h4>Climate change is real.</h4>
+                <h4>Summer peaches are the best.</h4>
                 <select>
                         <option value=""></option>
                         <option value="1">1 (Strongly Disagree)</option>
@@ -117,7 +117,7 @@
 
             <div>
                 <h3 class="question">Question 6</h3>
-                <h4> ALL people are entitled to fair working conditions.</h4>
+                <h4>Teachers need more resources.</h4>
                 <select>
                         <option value=""></option>
                         <option value="1">1 (Strongly Disagree)</option>
@@ -130,7 +130,7 @@
 
             <div>
                 <h3 class="question">Question 7</h3>
-                <h4>ALL people are entitled to equal health care coverage.</h4>
+                <h4>East Passyunk is the greatest Philly neighborhood.</h4>
                 <select>
                         <option value=""></option>
                         <option value="1">1 (Strongly Disagree)</option>
@@ -143,7 +143,7 @@
 
             <div>
                 <h3 class="question">Question 8</h3>
-                <h4>ALL citizens should have the right to vote regardless of past behaviors.</h4>
+                <h4>ALL citizens, regardless of past behavior, should have the right to vote.</h4>
                 <select>
                         <option value=""></option>
                         <option value="1">1 (Strongly Disagree)</option>
@@ -166,20 +166,6 @@
                         <option value="5">5 (Strongly Agree)</option>
                     </select>
             </div>
-
-            <div>
-                <h3 class="question">Question 9</h3>
-                <h4>More Philadelphians need access to healthy, fresh, affordable food.</h4>
-                <select>
-                        <option value=""></option>
-                        <option value="1">1 (Strongly Disagree)</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5 (Strongly Agree)</option>
-                    </select>
-            </div>
-
 
             <div>
                 <h3 class="question">Question 10</h3>
@@ -195,11 +181,30 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
+        <button type="button" class="btn btn-primary btn-lg btn-block" id="submit" data-toggle="modal" data-target="#myModal">
             <i class="fa fa-check-circle" aria-hidden="true"></i>
             Submit</button>
-    </div>
+    
 
+  <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     <script type="text/javascript">
         $("#submit").on("click", function () {
             var newFriend = {
@@ -208,18 +213,14 @@
                 scores: getScores()
             }
 
-            $.post("/api/friends", newFriend)
-                .then(function (data) {
+            var currentURL = window.location.origin;
+
+            $.post(currentURL + "/api/friends", newFriend, function (data) {
                     console.log(data);
-                    alert("Match made");
+                    // alert("Match made");
+                    return data
                 });
-
-
-            //use code example to make an ajax request to server
-            //this request should use the route for creating a new user
-            //pass newfriend to ^ request
-            //use data returned from this request to create and populate the modal that is the best friend
-        })
+             })
 
         function getScores() {
             var userScores = [];
@@ -228,6 +229,16 @@
             });
             return userScores
         }
+
+         //use code example to make an ajax request to server
+            //this request should use the route for creating a new user
+            //pass newfriend to ^ request
+            //use data returned from this request to create and populate the modal that is the best friend
+
+        // function findFriends() {
+        //     var currentURL = window.location.origin
+        //     $.POST
+        // }
 
 
     </script>
