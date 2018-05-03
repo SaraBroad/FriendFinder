@@ -12,12 +12,11 @@ var friends = require("./../data/friend.js")
       
     
     app.post("/api/friends", function(req, res) {
-       console.log(req.body);
+      //  console.log(req.body);
     //    return res.json(friends);
-        var newfriends = req.body;
-        newfriends.toString();
-        console.log("New friends: " + newfriends);
-        friends.push(newfriends);
-        res.json(newfriends);
+        // var newfriends = req.body;
+        // newfriends.toString();
+        // friends.push(newfriends);
+        // res.json(newfriends);
       });
   };

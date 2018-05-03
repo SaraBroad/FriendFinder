@@ -30,14 +30,14 @@
 
         <div>
             <h2>Name</h2>
-            <input type="text" id="name" class="form-control">
+            <input type="text" id="name" class="validate, form-control" required>
         </div>
 
 
 
         <div>
             <h3>Link to Photo Image(required)</h3>
-            <input type="text" id="photo" class="form-control">
+            <input type="text" id="photo" class="validate, form-control" required>
         </div>
 
         <hr>
@@ -116,7 +116,7 @@
 
             <div>
                 <h3 id="question6">Question 6</h3>
-                <h4>Teachers need more resources.</h4>
+                <h4>Pizza is delicious.</h4>
                 <select>
                         <option value=""></option>
                         <option value="1">1 (Strongly Disagree)</option>
@@ -129,7 +129,7 @@
 
             <div>
                 <h3 id="question7">Question 7</h3>
-                <h4>East Passyunk is the greatest Philly neighborhood.</h4>
+                <h4>We need to protect our natural resources.</h4>
                 <select>
                         <option value=""></option>
                         <option value="1">1 (Strongly Disagree)</option>
@@ -209,22 +209,68 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript">
+
+    //  var config = {
+    //   '.chosen-select'           : {},
+    //   '.chosen-select-deselect'  : {allow_single_deselect:true},
+    //   '.chosen-select-no-single' : {disable_search_threshold:10},
+    //   '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+    //   '.chosen-select-width'     : {width:"95%"}
+    // }
+    // for (var selector in config) {
+    //   $(selector).chosen(config[selector]);
+    // }
+
+    //  var config = {
+    //   ".chosen-select": {},
+    //   ".chosen-select-deselect": { allow_single_deselect: true },
+    //   ".chosen-select-no-single": { disable_search_threshold: 10 },
+    //   ".chosen-select-no-results": { no_results_text: "Oops, nothing found!" },
+    //   ".chosen-select-width": { width: "95%" }
+    // };
+
+    // for (var selector in config) {
+    //   $(selector).chosen(config[selector]);
+    // }
         $("#submit").on("click", function () {
+
+             function validateForm() {
+                var isValid = true;
+                $('.form-control').each(function () {
+                    if ($(this).val() === '') {
+                        isValid = false;
+                    }
+                });
+                $('.chosen-select').each(function () {
+                    if ($(this).val() === "") {
+                        isValid = false;
+                    }
+                });
+                return isValid;
+            }
+
+        if (validateForm() == true) {
+
             var newFriend = {
                 name: $("#name").val().trim(),
                 photo: $("#photo").val().trim(),
                 scores: getScores()
-            }
+                }
+            
 
 	        var currentURL = window.location.origin;
            
-            $.post(currentURL + "/api/friends", newFriend, function (data) {
-                    console.log(data);
-                    // alert("Match made");
-                    // return data
-                    $("#myModal").modal({show:true});
+            $.post(currentURL + "/api/friends", newFriend, function (data) {    
+                $("#modal-name").text(data.name);
+                $("#modal-pic").attr("src", data.photo);
 
+                $("#myModal").modal({show:true});
+                   
                 });
+                 } else {
+                     alert("Submit all answers before continuing")
+                 }
+                 return false
              });
 
 
