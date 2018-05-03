@@ -12,7 +12,8 @@ var friends = require("./../data/friend.js")
       
     
     app.post("/api/friends", function(req, res) {
-      //  console.log(req.body);
+      var users = req.body;
+       console.log(users);
     //    return res.json(friends);
         // var newfriends = req.body;
         // newfriends.toString();
