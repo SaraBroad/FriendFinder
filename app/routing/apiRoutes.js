@@ -15,6 +15,7 @@ var friends = require("./../data/friend.js")
        console.log(req.body);
     //    return res.json(friends);
         var newfriends = req.body;
+        newfriends.toString();
         console.log("New friends: " + newfriends);
         friends.push(newfriends);
         res.json(newfriends);

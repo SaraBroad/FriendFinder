@@ -4,15 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Survey</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  
+   
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+<!-- Optional theme -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <style>
         .question {
@@ -31,14 +30,14 @@
 
         <div>
             <h2>Name</h2>
-            <input type="text" id="name" class="form-control" required>
+            <input type="text" id="name" class="form-control">
         </div>
 
 
 
         <div>
             <h3>Link to Photo Image(required)</h3>
-            <input type="text" id="photo" class="form-control" required>
+            <input type="text" id="photo" class="form-control">
         </div>
 
         <hr>
@@ -46,7 +45,7 @@
         <div id="question-container">
             <div>
 
-                <h3 class="question">Question 1</h3>
+                <h3 id="question1">Question 1</h3>
                 <h4>Teachers need more resources for their classrooms.</h4>
 
                 <select>
@@ -64,7 +63,7 @@
             <!-- <div class="chosen-container chosen-container-single" style="width: 155px;" title="" id="q3_chosen"><a class="chosen-single chosen-default"><span>Select an Option</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off"></div><ul class="chosen-results"></ul></div></div> -->
 
             <div>
-                <h3 class="question">Question 2</h3>
+                <h3 id="question2">Question 2</h3>
                 <h4>Phish is the greatest band.</h4>
                 <select>
                         <option value=""></option>
@@ -77,7 +76,7 @@
             </div>
 
             <div>
-                <h3 class="question">Question 3</h3>
+                <h3 id="question3">Question 3</h3>
                 <h4>All people are entitled to equal health care.</h4>
                 <select>
                         <option value=""></option>
@@ -90,7 +89,7 @@
             </div>
 
             <div>
-                <h3 class="question">Question 4</h3>
+                <h3 id="question4">Question 4</h3>
                 <h4>Traveling is awesome.</h4>
                 <select>
                         <option value=""></option>
@@ -103,7 +102,7 @@
             </div>
 
             <div>
-                <h3 class="question">Question 5</h3>
+                <h3 id="question5">Question 5</h3>
                 <h4>Summer peaches are the best.</h4>
                 <select>
                         <option value=""></option>
@@ -116,7 +115,7 @@
             </div>
 
             <div>
-                <h3 class="question">Question 6</h3>
+                <h3 id="question6">Question 6</h3>
                 <h4>Teachers need more resources.</h4>
                 <select>
                         <option value=""></option>
@@ -129,7 +128,7 @@
             </div>
 
             <div>
-                <h3 class="question">Question 7</h3>
+                <h3 id="question7">Question 7</h3>
                 <h4>East Passyunk is the greatest Philly neighborhood.</h4>
                 <select>
                         <option value=""></option>
@@ -142,7 +141,7 @@
             </div>
 
             <div>
-                <h3 class="question">Question 8</h3>
+                <h3 id="question8">Question 8</h3>
                 <h4>ALL citizens, regardless of past behavior, should have the right to vote.</h4>
                 <select>
                         <option value=""></option>
@@ -155,7 +154,7 @@
             </div>
 
             <div>
-                <h3 class="question">Question 9</h3>
+                <h3 id="question9">Question 9</h3>
                 <h4>More Philadelphians need access to healthy, fresh, affordable food.</h4>
                 <select>
                         <option value=""></option>
@@ -168,7 +167,7 @@
             </div>
 
             <div>
-                <h3 class="question">Question 10</h3>
+                <h3 id="question10">Question 10</h3>
                 <h4>We need gun reform in our country.</h4>
                 <select>
                         <option value=""></option>
@@ -180,31 +179,35 @@
                     </select>
             </div>
         </div>
-
+        <br>
         <button type="button" class="btn btn-primary btn-lg btn-block" id="submit" data-toggle="modal" data-target="#myModal">
-            <i class="fa fa-check-circle" aria-hidden="true"></i>
-            Submit</button>
+            <i class="fa fa-check-circle" aria-hidden="true"></i>Submit</button>
     
 
   <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Best Match</h4>
+                </div>
+                <div class="modal-body">
+                <h3 id="modal-name"></h3>
+                <h3 id="modal-pic"></h3>
+             </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
         </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
     </div>
-  </div>
 </div>
+  
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript">
         $("#submit").on("click", function () {
             var newFriend = {
@@ -213,14 +216,20 @@
                 scores: getScores()
             }
 
-            var currentURL = window.location.origin;
-
+	        var currentURL = window.location.origin;
+           
             $.post(currentURL + "/api/friends", newFriend, function (data) {
                     console.log(data);
                     // alert("Match made");
-                    return data
+                    // return data
+                    $("#myModal").modal({show:true});
+
                 });
-             })
+             });
+
+
+
+
 
         function getScores() {
             var userScores = [];
@@ -230,6 +239,8 @@
             return userScores
         }
 
+   
+        
          //use code example to make an ajax request to server
             //this request should use the route for creating a new user
             //pass newfriend to ^ request
