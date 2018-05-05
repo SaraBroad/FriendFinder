@@ -12,9 +12,33 @@ var friends = require("./../data/friend.js")
       
     
     app.post("/api/friends", function(req, res) {
-      var users = req.body;
-       console.log(users);
-    //    return res.json(friends);
+      var newFriend = req.body;
+      var friendMatch = {
+        name: "",
+        photo: "",
+        scoreDiff: 100
+      };
+
+      for (var i = 0; i < friends.length; i++) {
+          totalDifference = 0;
+            for (var j = 0; j < newFriend.scores.length; j++) {
+              totalDifference += Math.abs(parseInt(newFriend.scores[j]) - parseInt(friends[i].scores[j]));
+                if (totalDifference <= friendMatch.scoreDiff) {
+                    friendMatch.name = friends[i].name;
+					          friendMatch.photo = friends[i].photo;
+				          	friendMatch.scoreDiff = totalDifference;
+                }
+            }
+      }
+
+      friends.push(newFriend)
+
+      //loop through user scores
+      //loop through friends scores
+      //friends - user scores
+
+
+       res.json(friendMatch);
         // var newfriends = req.body;
         // newfriends.toString();
         // friends.push(newfriends);

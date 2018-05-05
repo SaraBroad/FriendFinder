@@ -1,7 +1,7 @@
 var friends = [
     {
-        "name":"Ahmed",
-        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "name":"Sandy",
+        "photo":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Philadelphia_from_South_Street_Bridge_July_2016_panorama_3b.jpg/1200px-Philadelphia_from_South_Street_Bridge_July_2016_panorama_3b.jpg",
         "scores":[
             5,
             1,
@@ -17,7 +17,7 @@ var friends = [
       },
       {
         "name":"Bob",
-        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "photo":"https://static.independent.co.uk/s3fs-public/styles/article_small/public/thumbnails/image/2018/01/31/09/new-york-main-image.jpg",
         "scores":[
             3,
             1,
@@ -33,7 +33,7 @@ var friends = [
       },
       {
         "name":"Sara",
-        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "photo":"https://www.discotech.me/wp-content/uploads/2014/11/miami.jpg",
         "scores":[
             4,
             2,
