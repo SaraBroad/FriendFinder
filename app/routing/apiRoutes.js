@@ -29,7 +29,7 @@ var friends = require("./../data/friend.js")
       friends.push(newFriend)
 
 
-       res.json(friendMatch);
+      res.json(friendMatch);
    
       });
   };
